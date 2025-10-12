@@ -34,6 +34,7 @@
   <build>
     <plugins>
       <plugin>
+      <!-- Compiler plugin to set Java version -->
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
       </plugin>
@@ -42,6 +43,15 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M6</version>
       </plugin>
+      <!-- Exec plugin to run the app -->
+      <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>exec-maven-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <mainClass>it.isa.cakeshop.App</mainClass>
+      </configuration>
+    </plugin>
     </plugins>
   </build>
 </project>
