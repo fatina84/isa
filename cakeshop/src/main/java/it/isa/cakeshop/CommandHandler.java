@@ -20,7 +20,7 @@ public class CommandHandler {
     // Metodo principale che avvia il ciclo dei comandi
     public void run() {
         String command;
-        System.out.println("🎂 Benvenuto alla Cake Shop CLI!");
+        System.out.println("Benvenuto alla Cake Shop CLI!");
         System.out.println("Digita 'help' per vedere i comandi disponibili.");
         do {
             System.out.print("> ");
@@ -54,7 +54,7 @@ public class CommandHandler {
             printOrdersFromFile();
             break;
             case "exit":
-                System.out.println("Arrivederci! 👋");
+                System.out.println("Arrivederci!");
                 break;
             default:
                 System.out.println("Comando non riconosciuto. Digita 'help' per assistenza.");
@@ -75,9 +75,9 @@ public class CommandHandler {
         try {
             Category category = Category.valueOf(catStr); // Converte stringa in enum
             shop.addCake(new Cake(name, category, price));
-            System.out.println("✅ Torta aggiunta con successo!");
+            System.out.println("Torta aggiunta con successo!");
         } catch (IllegalArgumentException e) {
-            System.out.println("❌ Categoria non valida.");
+            System.out.println("Categoria non valida.");
         }
     }
 
@@ -103,7 +103,7 @@ public class CommandHandler {
         List<Cake> allCakes = shop.getAllCakes();
 
         if (allCakes.isEmpty()) {
-            System.out.println("❌ Nessuna torta disponibile per ordinare.");
+            System.out.println("Nessuna torta disponibile per ordinare.");
             return;
         }
 
@@ -122,10 +122,10 @@ public class CommandHandler {
                 if (index >= 0 && index < allCakes.size()) {
                     selectedCakes.add(allCakes.get(index));
                 } else {
-                    System.out.println("⚠️ Indice non valido: " + index);
+                    System.out.println("Indice non valido: " + index);
                 }
             } catch (NumberFormatException e) {
-                System.out.println("⚠️ Errore di formato: " + indexStr);
+                System.out.println("Errore di formato: " + indexStr);
             }
         }
 
@@ -133,7 +133,7 @@ public class CommandHandler {
             Order order = new Order(customerName, selectedCakes);
             shop.addOrder(order);
         } else {
-            System.out.println("❌ Nessuna torta selezionata, ordine annullato.");
+            System.out.println("Nessuna torta selezionata, ordine annullato.");
         }
     }
 
@@ -142,7 +142,7 @@ public class CommandHandler {
             List<String> lines = Files.readAllLines(Paths.get("ordini.txt"));
             lines.forEach(System.out::println);
         } catch (IOException e) {
-            System.out.println("❌ Errore nella lettura del file: " + e.getMessage());
+            System.out.println("Errore nella lettura del file: " + e.getMessage());
         }
     }
 
@@ -150,7 +150,7 @@ public class CommandHandler {
 
     // Mostra l'elenco dei comandi
     private void printHelp() {
-        System.out.println("📜 Comandi disponibili:");
+        System.out.println("Comandi disponibili:");
         System.out.println("add    - Aggiungi una nuova torta");
         System.out.println("list   - Elenca tutte le torte");
         System.out.println("search - Cerca torte per nome");
