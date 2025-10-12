@@ -2,6 +2,8 @@ package it.isa.cakeshop;
 
 import java.util.*;
 
+import it.isa.cakeshop.utils.PriceFormatter;
+
 // Classe che rappresenta un ordine
 public class Order {
     private String customerName;       // Nome del cliente
@@ -43,7 +45,7 @@ public class Order {
         for (Cake cake : orderedCakes) {
             sb.append("  - ").append(cake).append("\n");
         }
-        sb.append(String.format("💰 Totale: %.2f€", getTotalPrice()));
+        sb.append(String.format("Totale: %.2f€", PriceFormatter.format(getTotalPrice())));
         return sb.toString();
     }
 }

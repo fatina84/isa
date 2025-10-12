@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import it.isa.cakeshop.utils.PriceFormatter;
+
 // Classe per salvare gli ordini su file
 public class OrderStorage {
     private static final String FILE_NAME = "./data/ordini.txt"; // Nome del file
@@ -28,13 +30,13 @@ public class OrderStorage {
                 writer.newLine();
             }
 
-            writer.write(String.format("💰 Totale: %.2f€", order.getTotalPrice()));
+            writer.write(String.format("Totale: %.2f€", PriceFormatter.format(order.getTotalPrice())));
             writer.newLine();
             writer.write("--------------------------------------------------");
             writer.newLine();
 
         } catch (IOException e) {
-            System.out.println("❌ Errore nel salvataggio dell'ordine: " + e.getMessage());
+            System.out.println("Errore nel salvataggio dell'ordine: " + e.getMessage());
         }
     }
 }

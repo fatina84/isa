@@ -1,5 +1,7 @@
 package it.isa.cakeshop;
 
+import it.isa.cakeshop.utils.PriceFormatter;
+
 // Classe che rappresenta una torta
 public class Cake {
     private String name;       // Nome della torta
@@ -29,6 +31,6 @@ public class Cake {
     // Metodo per stampare la torta in formato leggibile
     @Override
     public String toString() {
-        return String.format("Torta: %s | Categoria: %s | Prezzo: %.2f€", name, category, price);
+        return String.format("Torta: %s | Categoria: %s | Prezzo: %.2f€", name, category, PriceFormatter.format(price));
     }
 }
