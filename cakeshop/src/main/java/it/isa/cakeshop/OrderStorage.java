@@ -15,25 +15,30 @@ public class OrderStorage {
 
     // Salva un ordine su file (in append)
     public static void saveOrder(Order order) {
-        try (BufferedWriter writer = Files.newBufferedWriter(
-                Paths.get(FILE_NAME),
-                StandardOpenOption.CREATE,
-                StandardOpenOption.APPEND
-        )) {
-            writer.write("Ordine di " + order.getCustomerName() + " - " +
-                    new SimpleDateFormat(DATE_FORMAT).format(order.getOrderDate()));
-            writer.newLine();
+        try {
+            // Ensure the parent directory exists
+            Path filePath = Paths.get(FILE_NAME);
+            Files.createDirectories(filePath.getParent());
 
-            List<Cake> cakes = order.getOrderedCakes();
-            for (Cake cake : cakes) {
-                writer.write(" - " + cake.toString());
+            try (BufferedWriter writer = Files.newBufferedWriter(
+                    filePath,
+                    StandardOpenOption.CREATE,
+                    StandardOpenOption.APPEND)) {
+                writer.write("Ordine di " + order.getCustomerName() + " - " +
+                        new SimpleDateFormat(DATE_FORMAT).format(order.getOrderDate()));
+                writer.newLine();
+
+                List<Cake> cakes = order.getOrderedCakes();
+                for (Cake cake : cakes) {
+                    writer.write(" - " + cake.toString());
+                    writer.newLine();
+                }
+
+                writer.write(String.format("Totale: %s", PriceFormatter.format(order.getTotalPrice())));
+                writer.newLine();
+                writer.write("--------------------------------------------------");
                 writer.newLine();
             }
-
-            writer.write(String.format("Totale: %s", PriceFormatter.format(order.getTotalPrice())));
-            writer.newLine();
-            writer.write("--------------------------------------------------");
-            writer.newLine();
 
         } catch (IOException e) {
             System.out.println("Errore nel salvataggio dell'ordine: " + e.getMessage());
