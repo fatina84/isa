@@ -45,7 +45,7 @@ public class Order {
         for (Cake cake : orderedCakes) {
             sb.append("  - ").append(cake).append("\n");
         }
-        sb.append(String.format("Totale: %.2f€", PriceFormatter.format(getTotalPrice())));
+        sb.append(String.format("Totale: %s", PriceFormatter.format(getTotalPrice())));
         return sb.toString();
     }
 }

@@ -31,6 +31,6 @@ public class Cake {
     // Metodo per stampare la torta in formato leggibile
     @Override
     public String toString() {
-        return String.format("Torta: %s | Categoria: %s | Prezzo: %.2f€", name, category, PriceFormatter.format(price));
+       return String.format("Torta: %s | Categoria: %s | Prezzo: %s", name, category, PriceFormatter.format(price));
     }
 }

@@ -20,7 +20,7 @@ public class OrderStorage {
                 StandardOpenOption.CREATE,
                 StandardOpenOption.APPEND
         )) {
-            writer.write("🧾 Ordine di " + order.getCustomerName() + " - " +
+            writer.write("Ordine di " + order.getCustomerName() + " - " +
                     new SimpleDateFormat(DATE_FORMAT).format(order.getOrderDate()));
             writer.newLine();
 
@@ -30,7 +30,7 @@ public class OrderStorage {
                 writer.newLine();
             }
 
-            writer.write(String.format("Totale: %.2f€", PriceFormatter.format(order.getTotalPrice())));
+            writer.write(String.format("Totale: %s", PriceFormatter.format(order.getTotalPrice())));
             writer.newLine();
             writer.write("--------------------------------------------------");
             writer.newLine();
