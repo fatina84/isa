@@ -34,24 +34,40 @@
   <build>
     <plugins>
       <plugin>
-      <!-- Compiler plugin to set Java version -->
+        <!-- Compiler plugin to set Java version -->
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M6</version>
       </plugin>
-      <!-- Exec plugin to run the app -->
+
       <plugin>
-      <groupId>org.codehaus.mojo</groupId>
-      <artifactId>exec-maven-plugin</artifactId>
-      <version>3.1.0</version>
-      <configuration>
-        <mainClass>it.isa.cakeshop.App</mainClass>
-      </configuration>
-    </plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <mainClass>it.isa.cakeshop.App</mainClass>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <!-- JAR plugin to add Main-Class to manifest -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>it.isa.cakeshop.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
+
 </project>
