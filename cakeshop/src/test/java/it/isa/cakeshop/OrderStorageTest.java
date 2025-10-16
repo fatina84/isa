@@ -7,6 +7,11 @@ import java.nio.file.*;
 import java.util.List;
 import org.junit.jupiter.api.*;
 
+import it.isa.cakeshop.model.Cake;
+import it.isa.cakeshop.model.Category;
+import it.isa.cakeshop.model.Order;
+import it.isa.cakeshop.storage.OrderStorage;
+
 // Test per il salvataggio su file degli ordini
 public class OrderStorageTest {
 

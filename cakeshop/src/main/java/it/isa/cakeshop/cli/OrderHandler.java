@@ -1,6 +1,10 @@
-package it.isa.cakeshop;
+package it.isa.cakeshop.cli;
 
-import it.isa.cakeshop.utils.IOProvider;
+import it.isa.cakeshop.io.IOProvider;
+import it.isa.cakeshop.model.Cake;
+import it.isa.cakeshop.model.Order;
+import it.isa.cakeshop.service.CakeShop;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

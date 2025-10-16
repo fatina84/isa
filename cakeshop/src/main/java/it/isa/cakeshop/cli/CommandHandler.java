@@ -1,7 +1,7 @@
-package it.isa.cakeshop;
+package it.isa.cakeshop.cli;
 
-import it.isa.cakeshop.utils.IOProvider;
-import java.util.*;
+import it.isa.cakeshop.io.IOProvider;
+import it.isa.cakeshop.service.CakeShop;
 
 // Classe che gestisce i comandi dell'utente da riga di comando
 // Usa IOProvider per rendere il codice testabile (input/output astratti).

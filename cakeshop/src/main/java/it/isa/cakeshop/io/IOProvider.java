@@ -1,4 +1,4 @@
-package it.isa.cakeshop.utils;
+package it.isa.cakeshop.io;
 
 /**
  * Interfaccia per gestire input/output, così da permettere test unitari facilmente (mockando

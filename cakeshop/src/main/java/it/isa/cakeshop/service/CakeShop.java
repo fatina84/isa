@@ -1,6 +1,11 @@
-package it.isa.cakeshop;
+package it.isa.cakeshop.service;
 
 import java.util.*;
+
+import it.isa.cakeshop.model.Cake;
+import it.isa.cakeshop.model.Category;
+import it.isa.cakeshop.model.Order;
+import it.isa.cakeshop.storage.OrderStorage;
 
 // Classe che gestisce torte e ordini
 public class CakeShop {

@@ -6,6 +6,10 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import it.isa.cakeshop.model.Cake;
+import it.isa.cakeshop.model.Category;
+import it.isa.cakeshop.service.CakeShop;
+
 // Test unitari per la classe CakeShop
 public class CakeShopTest {
 

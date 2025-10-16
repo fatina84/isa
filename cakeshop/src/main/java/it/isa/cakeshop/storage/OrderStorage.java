@@ -1,5 +1,7 @@
-package it.isa.cakeshop;
+package it.isa.cakeshop.storage;
 
+import it.isa.cakeshop.model.Cake;
+import it.isa.cakeshop.model.Order;
 import it.isa.cakeshop.utils.PriceFormatter;
 import java.io.*;
 import java.nio.file.*;

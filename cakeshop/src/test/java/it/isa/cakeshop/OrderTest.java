@@ -6,6 +6,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
+import it.isa.cakeshop.model.Cake;
+import it.isa.cakeshop.model.Category;
+import it.isa.cakeshop.model.Order;
+
 // Test per la classe Order
 public class OrderTest {
 

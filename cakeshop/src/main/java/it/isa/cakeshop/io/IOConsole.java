@@ -1,4 +1,4 @@
-package it.isa.cakeshop.utils;
+package it.isa.cakeshop.io;
 
 import java.util.Scanner;
 

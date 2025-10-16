@@ -1,4 +1,4 @@
-package it.isa.cakeshop;
+package it.isa.cakeshop.model;
 
 import it.isa.cakeshop.utils.PriceFormatter;
 import java.util.*;

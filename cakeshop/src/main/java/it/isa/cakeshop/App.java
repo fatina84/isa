@@ -1,7 +1,9 @@
 package it.isa.cakeshop;
 
-import it.isa.cakeshop.utils.IOConsole;
-import it.isa.cakeshop.utils.IOProvider;
+import it.isa.cakeshop.cli.CommandHandler;
+import it.isa.cakeshop.io.IOConsole;
+import it.isa.cakeshop.io.IOProvider;
+import it.isa.cakeshop.service.CakeShop;
 
 // Classe principale dell'applicazione
 public class App {

@@ -1,4 +1,4 @@
-package it.isa.cakeshop;
+package it.isa.cakeshop.model;
 
 // Enum per le categorie di torte
 public enum Category {
