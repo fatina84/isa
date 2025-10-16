@@ -49,6 +49,11 @@ public class CakeShop {
     System.out.println("✅ Ordine salvato su file!");
   }
 
+  // Restituisce tutti gli salvati
+  public List<Order> getAllOrders() {
+    return orders;
+  }
+
   // Elenca tutti gli ordini
   public void listAllOrders() {
     if (orders.isEmpty()) {
