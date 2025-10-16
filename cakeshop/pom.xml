@@ -67,6 +67,31 @@
           </archive>
         </configuration>
       </plugin>
+      <!-- Spotless plugin to auto-format code and ensure consistent style across the team -->
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>2.44.0</version>
+        <executions>
+          <execution>
+            <id>spotless-check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>spotless-apply</id>
+            <goals>
+              <goal>apply</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <java>
+            <googleJavaFormat />
+          </java>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
