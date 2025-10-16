@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "➡️  Running mvn spotless:apply before commit..."
+
+cd cakeshop || exit 1
+mvn spotless:apply
+cd - >/dev/null
+
+git status
+git add -u
