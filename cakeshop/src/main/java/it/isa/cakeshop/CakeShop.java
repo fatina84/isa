@@ -1,7 +1,6 @@
 package it.isa.cakeshop;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 // Classe che gestisce torte e ordini
 public class CakeShop {
@@ -17,14 +16,14 @@ public class CakeShop {
     public List<Cake> getCakesByCategory(Category category) {
         return cakes.stream()
                 .filter(cake -> cake.getCategory() == category)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     // Cerca torte per parola chiave
     public List<Cake> searchCakes(String keyword) {
         return cakes.stream()
                 .filter(cake -> cake.getName().toLowerCase().contains(keyword.toLowerCase()))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     // Elenca tutte le torte
