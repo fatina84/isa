@@ -51,3 +51,14 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/cakeshop:latest
+
+# Log in su Render (usando una chiave di accesso)
+      - name: Log in to Render
+        run: |
+          echo ${{ secrets.RENDER_API_KEY }} | docker login --username render --password-stdin registry.render.com
+
+      # Push dell'immagine su Render (sostituisci il nome del tuo servizio)
+      - name: Deploy to Render
+        run: |
+          docker tag ${{ secrets.DOCKER_USERNAME }}/cakeshop:latest registry.render.com/cakeshop-app-test/cakeshop:latest
+          docker push registry.render.com/cakeshop-app-test/cakeshop:latest
