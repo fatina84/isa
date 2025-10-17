@@ -64,6 +64,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           port: ${{ secrets.REMOTE_PORT }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
+          debug: true
           script: |
             docker pull ${{ secrets.DOCKER_USERNAME }}/cakeshop:latest
             docker stop cakeshop || true
