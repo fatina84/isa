@@ -51,3 +51,21 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/cakeshop:latest
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to remote VM via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          port: ${{ secrets.REMOTE_PORT }}
+          key: ${{ secrets.REMOTE_SSH_KEY }}
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/cakeshop:latest
+            docker stop cakeshop || true
+            docker rm cakeshop || true
+            docker run -d --name cakeshop -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/cakeshop:latest
