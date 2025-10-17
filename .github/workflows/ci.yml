@@ -22,7 +22,7 @@ jobs:
       # Test ping verso la VM per verificare la connessione
       - name: Ping the VM
         run: |
-          echo "Pinging the VM at ${ secrets.REMOTE_HOST }..."
+          echo "Pinging the VM at secrets.REMOTE_HOST..."
           ping -c 4 ${{ secrets.REMOTE_HOST }}
 
       # Setup Java 17
