@@ -9,7 +9,10 @@ public class IOConsole implements IOProvider {
   @Override
   public String readLine(String prompt) {
     System.out.print(prompt);
-    return scanner.nextLine();
+    if (scanner.hasNextLine()) return scanner.nextLine();
+    // To test the deployment on Render, which is not interactive, so we return "exit" when no input
+    // is available.
+    return "exit";
   }
 
   @Override
