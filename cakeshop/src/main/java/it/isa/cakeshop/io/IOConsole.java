@@ -13,7 +13,7 @@ public class IOConsole implements IOProvider {
     // To test the deployment on Render, which is not interactive, so we return "sleep" when no
     // input
     // is available.
-    return "test-CD-Render";
+    return "test";
   }
 
   @Override

@@ -40,7 +40,7 @@ public class CommandHandler {
       case "orders-file" -> orderHandler.readOrdersFromFile();
       case "help" -> printHelp();
       case "exit" -> io.println("Arrivederci!");
-      case "test-CD-Render" -> System.exit(0);
+      case "test" -> System.exit(0);
       default -> io.println("Comando non riconosciuto. Digita 'help' per assistenza.");
     }
   }
