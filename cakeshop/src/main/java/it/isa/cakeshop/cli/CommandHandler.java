@@ -40,6 +40,16 @@ public class CommandHandler {
       case "orders-file" -> orderHandler.readOrdersFromFile();
       case "help" -> printHelp();
       case "exit" -> io.println("Arrivederci!");
+      case "test-CD-Render" -> {
+        io.println("Attendo 20 secondi per il test...");
+        try {
+          Thread.sleep(20000);
+        } catch (InterruptedException e) {
+          io.println("Il thread è stato interrotto durante l'attesa.");
+        }
+        // Uscita dal programma
+        System.exit(0);
+      }
       default -> io.println("Comando non riconosciuto. Digita 'help' per assistenza.");
     }
   }
