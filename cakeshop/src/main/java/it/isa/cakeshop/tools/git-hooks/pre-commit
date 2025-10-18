@@ -1,9 +1,35 @@
 #!/bin/sh
-echo "➡️  Running mvn spotless:apply before commit..."
+echo "Esecuzione di mvn spotless:apply prima del commit..."
 
+# Vai nella directory del progetto (cakeshop)
 cd cakeshop || exit 1
+
+# Esegui spotless per applicare la formattazione del codice
 mvn spotless:apply
+
+# Esegui mvn clean install per verificare che il progetto si costruisca correttamente
+echo "Esecuzione di mvn clean install per assicurarsi che la build sia riuscita..."
+mvn clean install
+
+# Se il comando mvn clean install fallisce, il commit viene interrotto
+if [ $? -ne 0 ]; then
+    echo "La build è fallita! Commit interrotto."
+    exit 1
+fi
+
+# Esegui mvn test per assicurarti che tutti i test unitari siano passati
+echo "Esecuzione di mvn test per verificare i test unitari..."
+mvn test
+
+# Se i test falliscono, il commit viene interrotto
+if [ $? -ne 0 ]; then
+    echo "I test sono falliti! Commit interrotto."
+    exit 1
+fi
+
+# Torna nella directory precedente
 cd - >/dev/null
 
+# Mostra lo stato di git e aggiungi i file modificati
 git status
 git add -u
