@@ -17,12 +17,14 @@
   </properties>
 
   <dependencies>
+    <!-- Dipendenza per il framework di testing JUnit Jupiter API (per scrivere test) -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>5.8.2</version>
       <scope>test</scope>
     </dependency>
+    <!-- Dipendenza per il motore di esecuzione dei test JUnit Jupiter -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
@@ -33,18 +35,18 @@
 
   <build>
     <plugins>
-      <plugin>
-        <!-- Compiler plugin to set Java version -->
+      <!-- Compiler plugin to set Java version -->
+      <plugin>        
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
       </plugin>
-
+      <!-- Plugin per eseguire i test (JUnit) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0-M6</version>
       </plugin>
-
+      <!-- Plugin per eseguire applicazioni Java direttamente tramite Maven -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
@@ -92,29 +94,28 @@
           </java>
         </configuration>
       </plugin>
-              <!-- Plugin JaCoCo per la copertura -->
-        <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.10</version>
-            <executions>
-                <!-- Esecuzione al test phase per preparare JaCoCo -->
-                <execution>
-                    <goals>
-                        <goal>prepare-agent</goal>
-                    </goals>
-                </execution>
-                <!-- Genera il report dopo i test -->
-                <execution>
-                    <id>report</id>
-                    <phase>test</phase>
-                    <goals>
-                        <goal>report</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
+      <!-- Plugin JaCoCo per la copertura -->
+      <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.10</version>
+          <executions>
+              <!-- Esecuzione al test phase per preparare JaCoCo -->
+              <execution>
+                  <goals>
+                      <goal>prepare-agent</goal>
+                  </goals>
+              </execution>
+              <!-- Genera il report dopo i test -->
+              <execution>
+                  <id>report</id>
+                  <phase>test</phase>
+                  <goals>
+                      <goal>report</goal>
+                  </goals>
+              </execution>
+          </executions>
+      </plugin>
     </plugins>
   </build>
-
 </project>

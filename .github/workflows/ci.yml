@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: cakeshop  # Assicurati che questo percorso punti alla cartella giusta
+        working-directory: cakeshop  # working directory di default -> cakeshop, che contiene pom.xml
 
     steps:
       # Checkout del codice
