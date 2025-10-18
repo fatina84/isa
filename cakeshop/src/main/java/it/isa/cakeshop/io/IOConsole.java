@@ -12,7 +12,7 @@ public class IOConsole implements IOProvider {
     if (scanner.hasNextLine()) return scanner.nextLine();
     // To test the deployment on Render, which is not interactive, so we return "exit" when no input
     // is available.
-    return "exit";
+    return "default-input";
   }
 
   @Override
