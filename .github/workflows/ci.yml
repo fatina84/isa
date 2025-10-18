@@ -2,9 +2,9 @@ name: Maven CI
 
 on:
   push:
-    branches: [ test-remote-deploy-to-render ]
+    branches: [ main ]
   pull_request:
-    branches: [ test-remote-deploy-to-render ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: cakeshop  # Assicurati che questo percorso punti alla cartella giusta
+        working-directory: cakeshop  
 
     steps:
       # Checkout del codice
@@ -51,14 +51,3 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/cakeshop:latest
-
-# Log in su Render (usando una chiave di accesso)
-      - name: Log in to Render
-        run: |
-          echo ${{ secrets.RENDER_API_KEY }} | docker login --username render --password-stdin registry.render.com
-
-      # Push dell'immagine su Render (sostituisci il nome del tuo servizio)
-      - name: Deploy to Render
-        run: |
-          docker tag ${{ secrets.DOCKER_USERNAME }}/cakeshop:latest registry.render.com/cakeshop-app-test/cakeshop:latest
-          docker push registry.render.com/cakeshop-app-test/cakeshop:latest
