@@ -2,9 +2,9 @@ name: Maven CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ test-remote-deploy-to-render ]
   pull_request:
-    branches: [ main ]
+    branches: [ test-remote-deploy-to-render ]
 
 jobs:
   build:
