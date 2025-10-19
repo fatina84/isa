@@ -26,7 +26,7 @@ public class CakeHandlerTest {
   @Test
   public void testAddCakeValidInput() {
     io.addInput("Torta Prova");
-    io.addInput("BIRTHDAY");
+    io.addInput("COMPLEANNO");
     io.addInput("25.0");
 
     handler.addCake();
@@ -34,14 +34,14 @@ public class CakeHandlerTest {
     List<Cake> cakes = shop.getAllCakes();
     assertEquals(1, cakes.size());
     assertEquals("Torta Prova", cakes.get(0).getName());
-    assertEquals(Category.BIRTHDAY, cakes.get(0).getCategory());
+    assertEquals(Category.COMPLEANNO, cakes.get(0).getCategory());
     assertEquals(25.0, cakes.get(0).getPrice());
   }
 
   @Test
   public void testAddCakeInvalidPrice() {
     io.addInput("Torta Error");
-    io.addInput("BIRTHDAY");
+    io.addInput("COMPLEANNO");
     io.addInput("abc");
 
     handler.addCake();
@@ -66,7 +66,7 @@ public class CakeHandlerTest {
 
   @Test
   public void testSearchCakesFound() {
-    shop.addCake(new Cake("Cioccolato Extra", Category.CUSTOM, 10.0));
+    shop.addCake(new Cake("Cioccolato Extra", Category.ALTRO, 10.0));
     io.addInput("Extra");
 
     handler.searchCakes();
@@ -77,7 +77,7 @@ public class CakeHandlerTest {
 
   @Test
   public void testSearchCakesNotFound() {
-    shop.addCake(new Cake("Vaniglia", Category.CUSTOM, 8.0));
+    shop.addCake(new Cake("Vaniglia", Category.ALTRO, 8.0));
     io.addInput("Fragola");
 
     handler.searchCakes();

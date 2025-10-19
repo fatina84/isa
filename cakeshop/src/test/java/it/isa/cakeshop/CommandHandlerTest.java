@@ -35,7 +35,7 @@ public class CommandHandlerTest {
   @Test
   public void testAddCommandWithValidCake() {
     io.addInput("Torta Test");
-    io.addInput("BIRTHDAY");
+    io.addInput("COMPLEANNO");
     io.addInput("29.99");
 
     handlerTestCommand("add");
@@ -46,8 +46,8 @@ public class CommandHandlerTest {
 
   @Test
   public void testSearchCommandShowsMatchingCakes() {
-    Cake cake1 = new Cake("Torta Fragola", Category.CUSTOM, 15.0);
-    Cake cake2 = new Cake("Torta Limone", Category.CUSTOM, 18.0);
+    Cake cake1 = new Cake("Torta Fragola", Category.ALTRO, 15.0);
+    Cake cake2 = new Cake("Torta Limone", Category.ALTRO, 18.0);
     shop.addCake(cake1);
     shop.addCake(cake2);
 

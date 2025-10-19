@@ -14,8 +14,8 @@ public class OrderTest {
 
   @Test
   public void testTotalPrice() {
-    Cake c1 = new Cake("Torta Cioccolato", Category.BIRTHDAY, 20.0);
-    Cake c2 = new Cake("Torta Vaniglia", Category.ENGAGEMENT, 30.0);
+    Cake c1 = new Cake("Torta Cioccolato", Category.COMPLEANNO, 20.0);
+    Cake c2 = new Cake("Torta Vaniglia", Category.FIDANZAMENTO, 30.0);
 
     Order order = new Order("Mario", Arrays.asList(c1, c2));
     assertEquals(50.0, order.getTotalPrice(), 0.001);
@@ -23,7 +23,7 @@ public class OrderTest {
 
   @Test
   public void testToStringIncludesCustomerName() {
-    Cake cake = new Cake("Torta Limone", Category.CUSTOM, 15.0);
+    Cake cake = new Cake("Torta Limone", Category.ALTRO, 15.0);
     Order order = new Order("Luca", List.of(cake));
 
     String output = order.toString();

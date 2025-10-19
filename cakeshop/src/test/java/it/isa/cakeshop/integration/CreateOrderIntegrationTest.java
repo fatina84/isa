@@ -21,8 +21,8 @@ public class CreateOrderIntegrationTest {
     Files.deleteIfExists(ORDERS_FILE);
 
     CakeShop shop = new CakeShop();
-    shop.addCake(new Cake("Red Velvet", Category.ENGAGEMENT, 30.0));
-    shop.addCake(new Cake("Tiramisù", Category.CUSTOM, 22.0));
+    shop.addCake(new Cake("Red Velvet", Category.FIDANZAMENTO, 30.0));
+    shop.addCake(new Cake("Tiramisù", Category.ALTRO, 22.0));
 
     MockIOProvider io = new MockIOProvider();
     io.addInput("order");

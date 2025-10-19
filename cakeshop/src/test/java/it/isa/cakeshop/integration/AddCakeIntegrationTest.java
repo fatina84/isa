@@ -18,7 +18,7 @@ public class AddCakeIntegrationTest {
     // Simula comando "add" con input dell'utente
     io.addInput("add");
     io.addInput("Torta al cioccolato");
-    io.addInput("BIRTHDAY");
+    io.addInput("COMPLEANNO");
     io.addInput("25.50");
     io.addInput("exit");
 

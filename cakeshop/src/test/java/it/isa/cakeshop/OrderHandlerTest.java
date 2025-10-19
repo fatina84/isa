@@ -25,8 +25,8 @@ public class OrderHandlerTest {
 
   @Test
   public void testCreateOrderWithValidSelection() {
-    Cake c1 = new Cake("Choco Cake", Category.BIRTHDAY, 20.0);
-    Cake c2 = new Cake("Fruit Cake", Category.CUSTOM, 25.0);
+    Cake c1 = new Cake("Choco Cake", Category.COMPLEANNO, 20.0);
+    Cake c2 = new Cake("Fruit Cake", Category.ALTRO, 25.0);
     shop.addCake(c1);
     shop.addCake(c2);
 
@@ -40,7 +40,7 @@ public class OrderHandlerTest {
 
   @Test
   public void testCreateOrderInvalidIndex() {
-    Cake c1 = new Cake("Choco Cake", Category.BIRTHDAY, 20.0);
+    Cake c1 = new Cake("Choco Cake", Category.COMPLEANNO, 20.0);
     shop.addCake(c1);
 
     io.addInput("Bob");

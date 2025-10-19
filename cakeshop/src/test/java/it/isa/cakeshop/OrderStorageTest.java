@@ -23,7 +23,7 @@ public class OrderStorageTest {
 
   @Test
   public void testOrderIsSavedToFile() throws IOException {
-    Cake cake = new Cake("Torta Prova", Category.CUSTOM, 19.99);
+    Cake cake = new Cake("Torta Prova", Category.ALTRO, 19.99);
     Order order = new Order("Test Cliente", List.of(cake));
 
     OrderStorage.saveOrder(order);

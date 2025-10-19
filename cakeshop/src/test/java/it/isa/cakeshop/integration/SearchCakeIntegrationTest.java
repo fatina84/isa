@@ -15,8 +15,8 @@ public class SearchCakeIntegrationTest {
   @Test
   void testSearchCakeCommand() {
     CakeShop shop = new CakeShop();
-    shop.addCake(new Cake("Torta alle fragole", Category.VALENTINES_DAY, 18.0));
-    shop.addCake(new Cake("Torta al limone", Category.BIRTHDAY, 20.0));
+    shop.addCake(new Cake("Torta alle fragole", Category.SAN_VALENTINO, 18.0));
+    shop.addCake(new Cake("Torta al limone", Category.COMPLEANNO, 20.0));
 
     MockIOProvider io = new MockIOProvider();
     io.addInput("search");

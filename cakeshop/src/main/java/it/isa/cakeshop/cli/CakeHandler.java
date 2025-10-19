@@ -20,7 +20,8 @@ public class CakeHandler {
   public void addCake() {
     String name = io.readLine("Nome della torta: ");
     String catStr =
-        io.readLine("Categoria (BIRTHDAY, ENGAGEMENT, MOTHERS_DAY, VALENTINES_DAY, CUSTOM): ")
+        io.readLine(
+                "Categoria (COMPLEANNO, FIDANZAMENTO, FESTA_DELLA_MAMMA, SAN_VALENTINO, ALTRO): ")
             .toUpperCase();
     String priceStr = io.readLine("Prezzo (€): ");
 
