@@ -38,7 +38,7 @@ public class CommandHandlerTest {
     io.addInput("COMPLEANNO");
     io.addInput("29.99");
 
-    handlerTestCommand("add");
+    handlerTestCommand("1");
 
     assertEquals(1, shop.getAllCakes().size());
     assertEquals("Torta Test", shop.getAllCakes().get(0).getName());
@@ -53,7 +53,7 @@ public class CommandHandlerTest {
 
     io.addInput("fragola");
 
-    handlerTestCommand("search");
+    handlerTestCommand("3");
 
     assertTrue(io.getOutputs().stream().anyMatch(line -> line.contains("Torta Fragola")));
     assertFalse(io.getOutputs().stream().anyMatch(line -> line.contains("Torta Limone")));

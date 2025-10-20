@@ -25,7 +25,7 @@ public class CreateOrderIntegrationTest {
     shop.addCake(new Cake("Tiramisù", Category.ALTRO, 22.0));
 
     MockIOProvider io = new MockIOProvider();
-    io.addInput("order");
+    io.addInput("4");
     io.addInput("Mario Rossi"); // Nome cliente
     io.addInput("0,1"); // Seleziona entrambe le torte
     io.addInput("exit");

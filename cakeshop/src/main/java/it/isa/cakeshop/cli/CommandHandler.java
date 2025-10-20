@@ -20,7 +20,7 @@ public class CommandHandler {
   // Metodo principale che avvia il ciclo dei comandi
   public void run() {
     String command;
-    io.println("Benvenuto alla Cake Shop CLI!");
+    io.println("Benvenuti alla Cake Shop CLI!");
     io.println("Digita 'help' per vedere i comandi disponibili.");
 
     do {
@@ -32,12 +32,12 @@ public class CommandHandler {
   // Gestione dei vari comandi
   private void handleCommand(String command) {
     switch (command.toLowerCase()) {
-      case "list" -> cakeHandler.listCakes();
-      case "add" -> cakeHandler.addCake();
-      case "search" -> cakeHandler.searchCakes();
-      case "order" -> orderHandler.createOrder();
-      case "orders" -> orderHandler.listOrders();
-      case "orders-file" -> orderHandler.readOrdersFromFile();
+      case "1" -> cakeHandler.addCake();
+      case "2" -> cakeHandler.listCakes();
+      case "3" -> cakeHandler.searchCakes();
+      case "4" -> orderHandler.createOrder();
+      case "5" -> orderHandler.listOrders();
+      case "6" -> orderHandler.readOrdersFromFile();
       case "help" -> printHelp();
       case "exit" -> io.println("Arrivederci!");
       default -> io.println("Comando non riconosciuto. Digita 'help' per assistenza.");
@@ -47,13 +47,13 @@ public class CommandHandler {
   // Mostra l'elenco dei comandi
   private void printHelp() {
     io.println("Comandi disponibili:");
-    io.println("add         - Aggiungi una nuova torta");
-    io.println("list        - Elenca tutte le torte");
-    io.println("search      - Cerca torte per nome");
-    io.println("order       - Crea un nuovo ordine");
-    io.println("orders      - Mostra tutti gli ordini attivi");
-    io.println("orders-file - Mostra gli ordini salvati su file");
-    io.println("help        - Mostra questo messaggio");
-    io.println("exit        - Esci dall'applicazione");
+    io.println("1 - Aggiungi una nuova torta");
+    io.println("2 - Elenca tutte le torte");
+    io.println("3 - Cerca torte per nome");
+    io.println("4 - Crea un nuovo ordine");
+    io.println("5 - Mostra tutti gli ordini attivi");
+    io.println("6 - Mostra gli ordini salvati su file");
+    io.println("help - Mostra questo messaggio");
+    io.println("exit - Esci dall'applicazione");
   }
 }

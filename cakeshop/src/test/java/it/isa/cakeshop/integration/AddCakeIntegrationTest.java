@@ -15,8 +15,8 @@ public class AddCakeIntegrationTest {
     CakeShop shop = new CakeShop();
     MockIOProvider io = new MockIOProvider();
 
-    // Simula comando "add" con input dell'utente
-    io.addInput("add");
+    // Simula comando "add" con input 1 dell'utente
+    io.addInput("1");
     io.addInput("Torta al cioccolato");
     io.addInput("COMPLEANNO");
     io.addInput("25.50");

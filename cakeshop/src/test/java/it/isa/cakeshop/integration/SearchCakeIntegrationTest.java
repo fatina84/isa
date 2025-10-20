@@ -19,7 +19,7 @@ public class SearchCakeIntegrationTest {
     shop.addCake(new Cake("Torta al limone", Category.COMPLEANNO, 20.0));
 
     MockIOProvider io = new MockIOProvider();
-    io.addInput("search");
+    io.addInput("3");
     io.addInput("fragole");
     io.addInput("exit");
 
